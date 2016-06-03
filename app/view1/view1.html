@@ -1,0 +1,80 @@
+<style type="text/css">
+input[type=checkbox]{
+	
+    width: 32px;
+    height: 32px;
+}
+
+
+ /*input[type=checkbox] + label{
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    padding-left: 40px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    line-height: 32px;
+    cursor: pointer;
+}
+
+input[type=checkbox]:checked + label{
+  background-position: left -32px;
+}
+
+label{
+ background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_d2a60beb8fb6bbb280642579049ebf65.png);
+ 
+}*/
+.glyphicon-plus-new{
+    padding: 20px;
+    background-color: #4586BD;
+    color: whitesmoke;
+    border-radius: 25px;
+    position: absolute;
+    top: 630px;
+    left: 50%;
+    box-shadow: grey 1px 1px 2px;
+}
+</style>
+
+<div ng-app="" class=" container">
+ 
+<hr>
+ 
+  <div class="row container" style="height:640px;">
+  	<div style="height: inherit;background-color: #f1f1f1;box-shadow: #e5e5e5 4px 5px 1px;">
+	    <div class="col-xs-12">
+	    	<div class="row-xs-12" style="padding:5px;font-size: 30px;border-bottom: 1px solid #BFBFBF;border-radius: 15px;" ng-repeat="x in records">
+ 	    		<input type="checkbox" id="chk{{todoListCount}}" />
+				<label for="chk{{todoListCount}}" style="width: inherit;">{{x.title}}</label> 
+	    	</div>
+
+
+	    </div>
+  	</div>
+  </div>
+
+  <div class="glyphicon glyphicon-plus glyphicon-plus-new" data-toggle="modal" data-target="#myModal"></div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog" style="top: 10%;">
+    <div class="modal-dialog">
+    
+        <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><input type="text" class="form-control" placeholder="Title" ng-model="inputTitle"></h4>
+        </div>
+        <div class="modal-body">
+          <p><input type="text" class="form-control" placeholder="Information"  ng-model="inputDescription" ></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="plusCount()"><span class="glyphicon glyphicon-plus glyphicon-plus-add"></span></button>
+        </div>
+      </div>
+  </div>
+  </div>
+
+</div>
+
